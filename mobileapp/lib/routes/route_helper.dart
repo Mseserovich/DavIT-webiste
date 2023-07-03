@@ -5,13 +5,16 @@ import 'package:mobileapp/pages/home/home_page.dart';
 import 'package:mobileapp/pages/home/main_food_page.dart';
 
 import '../pages/cart/cart_page.dart';
+import '../pages/splash/splash_page.dart';
 
 class RouteHelper{
   static const String initial = "/";
+  static const String splashPage = "/splash-page";
   static const String popularFood = "/popular-food";
   static const String recommendedFood = "/recommended-food";
   static const String cartPage = "/cart-page";
 
+  static String getSplashPage()=>'$splashPage';
   static String getPopularFood(int pageId, String page)=>'$popularFood?pageId=$pageId&page=$page';
   static String getInitial()=>'$initial';
   static String getrecommendedFood(int pageId, String page)=>'$recommendedFood?pageId=$pageId&page=$page';
@@ -20,6 +23,7 @@ class RouteHelper{
   static List<GetPage> routes = [
     GetPage(name: initial, page: ()=>HomePage()),
 
+    GetPage(name: splashPage, page: ()=>SplashScreen()),
 
     GetPage(name: popularFood, page:(){
       // print("popular-food gets called");

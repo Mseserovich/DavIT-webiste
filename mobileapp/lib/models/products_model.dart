@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Product {
   // ignore: unused_field
   int? _totalSize;
@@ -65,6 +67,20 @@ class ProductModel {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     typeId = json['type_id'];
+  }
+  Map<String, dynamic> toJson(){
+    return {
+      "id" : this.id,
+      "name" : this.name,
+      "description" : this.description,
+      "price" : this.price,
+      "stars" : this.stars,
+      "img" : this.img,
+      "location" : this.location,
+      "createdAt" : this.createdAt,
+      "updatedAt" : this.updatedAt,
+      "typeId" : this.typeId,
+    };
   }
 
 }
